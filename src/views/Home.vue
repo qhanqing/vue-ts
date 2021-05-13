@@ -11,5 +11,7 @@
     components: {}
   })
   export default class Home extends Vue {
+    public decLiteral = 6;
+
   }
 </script>
