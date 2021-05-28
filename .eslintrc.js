@@ -70,7 +70,7 @@ module.exports = {
     'no-nested-ternary': 0,//禁止使用嵌套的三目运算
     'no-new': 1,//禁止在使用new构造一个实例后不赋值
     "no-inferrable-types": [
-      true,
+      0,
       "ignore-params",
       "ignore-properties"
     ],
@@ -166,7 +166,7 @@ module.exports = {
     'max-statements': [0, 10],//函数内最多有几个声明
     'new-cap': 2,//函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用
     'new-parens': 2,//new时必须加小括号
-    'newline-after-var': 2,//变量声明后是否需要空一行
+    'newline-after-var': 0,//变量声明后是否需要空一行
     'object-curly-spacing': [0, 'never'],//大括号内是否允许不必要的空格
     'object-shorthand': 0,//强制对象字面量缩写语法
     'one-var': 1,//连续声明
@@ -176,12 +176,13 @@ module.exports = {
     'prefer-const': 0,//首选const
     'prefer-spread': 0,//首选展开运算
     'prefer-reflect': 0,//首选Reflect的方法
-    'quotes': [1, 'single'],//引号类型 `` "" ''
+    'quotes': [0, 'single'],//引号类型 `` "" ''
     'quote-props': [0, 'always'],//对象字面量中的属性名是否强制双引号
     'radix': 2,//parseInt必须指定第二个参数
     'id-match': 0,//命名检测
     'require-yield': 0,//生成器函数必须有yield
     'semi': [0, 'always'],//语句强制分号结尾
+    "@typescript-eslint/no-explicit-any": ["off"],
     'semi-spacing': [0, {
       'before': false,
       'after': true

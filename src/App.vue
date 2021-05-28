@@ -1,18 +1,24 @@
 <template>
-  <div id="app">
-    <div>
-      <router-link to="/"></router-link>
-    </div>
-    <router-view/>
-  </div>
+  <el-container>
+    <el-aside style="width: 220px">
+      <sidebar></sidebar>
+    </el-aside>
+    <el-main>
+      <router-view/>
+    </el-main>
+  </el-container>
 </template>
+<script lang="ts">
+  import {Component, Vue} from 'vue-property-decorator'
+  import sidebar from '@/layout/sidebar/index.vue'
 
-<style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+  @Component({
+    components: {sidebar}
+  })
+  export default class App extends Vue {
+
+
   }
+</script>
+<style>
 </style>
