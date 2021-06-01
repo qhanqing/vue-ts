@@ -1,36 +1,40 @@
 <template>
-  <el-container>
+  <el-container class="container">
     <el-aside style="width: 220px">
       <sidebar></sidebar>
     </el-aside>
-    <el-main>
-      <transition :name="transitionName">
-        <router-view></router-view>
-      </transition>
-    </el-main>
+    <el-container>
+      <el-header style="padding: 0;">
+        <nar-bar></nar-bar>
+      </el-header>
+      <el-main>
+        <transition name="slide-fade">
+          <router-view></router-view>
+        </transition>
+      </el-main>
+    </el-container>
   </el-container>
 </template>
 <script lang="ts">
-  import {Component, Vue, Watch} from 'vue-property-decorator'
+  import {Component, Vue} from 'vue-property-decorator'
   import sidebar from '@/layout/sidebar/index.vue'
+  import NarBar from '@/layout/NarBar/index.vue'
 
   @Component({
-    components: {sidebar}
+    components: {sidebar, NarBar}
   })
 
   export default class App extends Vue {
-    public transitionName: any = ''
-
-    @Watch("route", {immediate: true, deep: true})
-    private onRouteChange(newValue: string, oldValue: string) {
-      console.log('route值改变了' + newValue, oldValue);
-      this.transitionName = 'slide-fade';
-    }
   }
 </script>
 <style>
+  .container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   .slide-fade {
-    position: fixed;
+    position: absolute;
     top: 0;
   }
 

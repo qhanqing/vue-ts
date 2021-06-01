@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-menu default-active="0">
+    <el-menu>
       <div v-for="(item,index) in router()" :key="index">
         <el-submenu :index="index.toString()" v-if="item.children&&item.children.length">
           <template slot="title">
@@ -8,7 +8,7 @@
           </template>
           <el-menu-item-group>
             <div v-for="child in item.children" :key="child.path" style="text-align: left">
-              <router-link :to="child.path"  :key="child.name">
+              <router-link :to="child.path" :key="child.name">
                 <el-menu-item :index="item.path+'/'+child.path">
                   <span>{{child.name}}</span>
                 </el-menu-item>
