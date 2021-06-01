@@ -8,13 +8,13 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: '首页',
-    component: (resolve) => require(['@/views/home/index.vue'], resolve),
+    component: () => import("@/views/home/index.vue"),
     children: []
   },
   {
     path: '/login',
     name: '登录',
-    component: (resolve) => require(['@/views/login/index.vue'], resolve),
+    component: () => import("@/views/login/index.vue"),
     children: []
   },
   {
@@ -25,7 +25,7 @@ const routes: Array<RouteConfig> = [
       {
         path: '/report',
         name: '财务报表',
-        component: (resolve) => require(['@/views/finance/report/index.vue'], resolve)
+        component: () => import("@/views/finance/report/index.vue")
       }
     ]
   }
