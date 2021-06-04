@@ -20,6 +20,7 @@
     public receiveMassage(val: string): void {
       console.log(val); //子组件传递过来的值
     }
+
   }
 
 </script>
